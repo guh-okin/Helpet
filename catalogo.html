@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de Adoção · Helpet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-light">
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__icon">🐾</span>
+      <span class="logo__text"><strong>Helpet ♡</strong><small>ADOÇÃO & CUIDADO</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html" class="is-active" aria-current="page">Adotar</a>
+      <a href="doacao.html">Doar Alimentos & Ração</a>
+      <a href="index.html#ong">ONGs Parceiras</a>
+    </nav>
+    <div class="header__actions">
+      <label class="search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input type="search" id="searchInput" placeholder="Buscar cães, gatos ou abrigos...">
+      </label>
+      <a href="index.html#ong" class="btn btn--dark btn--sm">⊕ Cadastrar Pet</a>
+      <button class="bell" aria-label="Notificações"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg><i></i></button>
+      <div class="user"><span class="user__avatar">👤</span><span class="user__info"><strong>Mariana Alencar</strong><small>Tutor Protetor</small></span></div>
+    </div>
+  </div>
+</header>
+
+<main class="page-wrap">
+  <section class="cat-hero">
+    <div class="cat-hero__text">
+      <h1>Ache seu novo amigo de <span>quatro patas</span></h1>
+      <p>Todos os animais cadastrados no Helpet passam por triagem veterinária, vacinação orientada e acompanhamento com protetores sérios de São Paulo e região metropolitana.</p>
+    </div>
+    <div class="cat-hero__img">
+      <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Filhote de cachorro e gatinho deitados juntos em uma manta" data-fallback="🐶🐱">
+    </div>
+  </section>
+
+  <div class="cat-layout">
+    <!-- FILTROS -->
+    <aside class="filters" aria-label="Filtros">
+      <form id="filterForm" autocomplete="off">
+        <div class="filters__head">
+          <h2>☰ Filtros</h2>
+          <button type="button" class="filters__clear" id="clearFilters">Limpar Filtros</button>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="fName">Buscar por Nome</label>
+          <div class="finput"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="fName" name="name" type="text" placeholder="Ex: Paçoca, Mel, Thor..."></div>
+        </div>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Espécie</legend>
+          <div class="pills2">
+            <label class="chk chk--pill"><input type="checkbox" name="species" value="cao" checked>Cães</label>
+            <label class="chk chk--pill"><input type="checkbox" name="species" value="gato" checked>Gatos</label>
+            <label class="chk chk--pill"><input type="checkbox" name="species" value="coelho">Coelhos</label>
+            <label class="chk chk--pill"><input type="checkbox" name="species" value="outro">Outros</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Sexo</legend>
+          <div class="seg">
+            <label><input type="radio" name="sex" value="" checked><span>Tanto faz</span></label>
+            <label><input type="radio" name="sex" value="M"><span>Macho</span></label>
+            <label><input type="radio" name="sex" value="F"><span>Fêmea</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Faixa Etária</legend>
+          <label class="chk"><input type="checkbox" name="age" value="filhote" checked>Filhote (até 1 ano)</label>
+          <label class="chk"><input type="checkbox" name="age" value="jovem" checked>Jovem (1 a 3 anos)</label>
+          <label class="chk"><input type="checkbox" name="age" value="adulto">Adulto (3 a 7 anos)</label>
+          <label class="chk"><input type="checkbox" name="age" value="senior">Sênior (7+ anos)</label>
+        </fieldset>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Porte</legend>
+          <div class="togs">
+            <label class="tog"><input type="checkbox" name="size" value="Pequeno" checked><span>Pequeno</span></label>
+            <label class="tog"><input type="checkbox" name="size" value="Médio" checked><span>Médio</span></label>
+            <label class="tog"><input type="checkbox" name="size" value="Grande"><span>Grande</span></label>
+          </div>
+        </fieldset>
+
+        <div class="fgroup">
+          <label class="flabel" for="fRegion">Localização</label>
+          <div class="finput finput--select">📍
+            <select id="fRegion" name="region">
+              <option value="sp" selected>São Paulo - SP</option>
+              <option value="camp">Campinas - SP</option>
+              <option value="">Todas as regiões</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Saúde & Cuidados</legend>
+          <label class="chk"><input type="checkbox" name="health" value="cast" checked>Castrado(a)</label>
+          <label class="chk"><input type="checkbox" name="health" value="vac" checked>Vacinado</label>
+          <label class="chk"><input type="checkbox" name="health" value="verm" checked>Vermifugado recentemente</label>
+          <label class="chk"><input type="checkbox" name="health" value="pne">Necessidades Especiais (PNE)</label>
+        </fieldset>
+
+        <fieldset class="fgroup">
+          <legend class="flabel">Temperamento</legend>
+          <div class="togs">
+            <label class="tog tog--mint"><input type="checkbox" name="temp" value="docil" checked><span>Dócil</span></label>
+            <label class="tog tog--mint"><input type="checkbox" name="temp" value="brincalhao" checked><span>Brincalhão</span></label>
+            <label class="tog tog--mint"><input type="checkbox" name="temp" value="calmo" checked><span>Calmo</span></label>
+            <label class="tog tog--mint"><input type="checkbox" name="temp" value="sociavel" checked><span>Sociável</span></label>
+            <label class="tog tog--mint"><input type="checkbox" name="temp" value="independente"><span>Independente</span></label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--dark filters__apply" id="applyBtn">Aplicar Filtros (0)</button>
+      </form>
+    </aside>
+
+    <!-- RESULTADOS -->
+    <section class="results" aria-live="polite">
+      <div class="results__bar">
+        <h2><b id="resCount">0 pets</b> aguardando um lar</h2>
+        <label class="sort">Ordenar por:
+          <select id="sort">
+            <option value="recent">Mais recentes</option>
+            <option value="name">Nome (A–Z)</option>
+            <option value="near">Mais próximos</option>
+            <option value="young">Mais novos</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="pgrid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Nenhum pet encontrado com esses filtros. Tente remover alguns filtros ou clique em "Limpar Filtros".</p>
+
+      <nav class="pager" id="pager" aria-label="Paginação"></nav>
+
+      <aside class="donate-banner">
+        <span class="donate-banner__icon">🍎</span>
+        <div>
+          <h3>Não pode adotar agora?</h3>
+          <p>Alimente um abrigo parceiro com apenas 1 clique doando ração ou medicamentos essenciais para quem mais precisa.</p>
+        </div>
+        <a href="doacao.html" class="btn btn--amber">Doar 1kg de Ração ♡</a>
+      </aside>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a href="index.html" class="logo"><span class="logo__icon">🐾</span><strong style="font-size:18px">Helpet</strong></a>
+      <p>Conectando corações, lares e animais resgatados. Apoio contínuo a ONGs com campanhas de adoção responsável e doação solidária de ração e cuidados veterinários.</p>
+    </div>
+    <div><h4>Adoção & Causa</h4><a href="catalogo.html">Quero Adotar um Cão</a><a href="catalogo.html">Quero Adotar um Gato</a><a href="doacao.html">Bancos de Alimentos</a><a href="#">Cadastrar Resgatado</a></div>
+    <div><h4>Institucional</h4><a href="#">Sobre o Helpet</a><a href="#">Rede de Abrigos</a><a href="#">Transparência & Metas</a><a href="#">Carreiras & Voluntariado</a></div>
+    <div><h4>Ajuda & Suporte</h4><a href="#">Central de Dúvidas</a><a href="#">Diretrizes de Adoção</a><a href="#">Fale Conosco</a><a href="#">Privacidade & Termos</a></div>
+  </div>
+  <div class="footer__bottom"><small>© 2026 Helpet Plataforma de Proteção Animal. Todos os direitos reservados.</small><small>Feito com amor e patinhas acolhidas 🐾</small></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="pages.js"></script>
+</body>
+</html>
