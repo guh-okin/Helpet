@@ -1,283 +1,408 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Helpet · Adoção & Cuidado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="estilo/style.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header__inner">
-    <a href="#" class="logo">
-      <span class="logo__icon">🐾</span>
-      <span class="logo__text"><strong>Helpet ♡</strong><small>ADOÇÃO & CUIDADO</small></span>
-    </a>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon">🐾</span>
+        <span class="logo__text"><strong>Helpet ♡</strong><small>ADOÇÃO & CUIDADO</small></span>
+      </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-    <nav class="nav" id="nav">
-      <a href="index.html" class="is-active">Início</a>
-      <a href="catalogo.html">Adotar</a>
-      <a href="doacao.html">Doar Alimentos & Ração</a>
-      <a href="#ong">ONGs Parceiras</a>
-    </nav>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="is-active">Início</a>
+        <a href="catalogo.html">Adotar</a>
+        <a href="doacao.html">Doar Alimentos & Ração</a>
+        <a href="#ong">ONGs Parceiras</a>
+      </nav>
 
-    <div class="header__actions">
-      <label class="search">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-        <input type="search" id="searchInput" placeholder="Buscar cães, gatos ou abrigos...">
-      </label>
-      <a href="#ong" class="btn btn--dark btn--sm">⊕ Cadastrar Pet</a>
-      <button class="bell" aria-label="Notificações"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg><i></i></button>
-      <div class="user">
-        <span class="user__avatar">👤</span>
-        <span class="user__info"><strong>Mariana Alencar</strong><small>Tutor Protetor</small></span>
+      <div class="header__actions">
+        <label class="search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-4-4" />
+          </svg>
+          <input type="search" id="searchInput" placeholder="Buscar cães, gatos ou abrigos...">
+        </label>
+        <a href="#ong" class="btn btn--dark btn--sm"> Cadastrar Pet</a>
+        <button class="bell" aria-label="Notificações"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0" />
+          </svg><i></i></button>
+        <div class="user">
+          <span class="user__avatar">👤</span>
+          <span class="user__info"><strong>Mariana Alencar</strong><small>Tutor Protetor</small></span>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main id="inicio">
+  <main id="inicio">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div class="hero__content">
-        <span class="chip chip--glass"><i class="dot"></i> Mais de 12.000 vidas transformadas</span>
-        <h1>Um novo amigo,<br><span class="hl">milhares de alegrias!</span></h1>
-        <p>Conectamos abrigos sérios a famílias que transbordam amor. Encontre seu companheiro ideal ou ajude quem mais precisa hoje.</p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="chip chip--glass"><i class="dot"></i> Mais de 12.000 vidas transformadas</span>
+          <h1>Um novo amigo,<br><span class="hl">milhares de alegrias!</span></h1>
+          <p>Conectamos abrigos sérios a famílias que transbordam amor. Encontre seu companheiro ideal ou ajude quem
+            mais precisa hoje.</p>
 
-        <form class="finder" id="finder">
-          <div class="finder__row">
-            <label class="field"><span>ESPÉCIE</span>
-              <select id="fSpecies"><option value="">🐾 Todos os pets</option><option value="cao">🐶 Cães</option><option value="gato">🐱 Gatos</option></select>
-            </label>
-            <label class="field"><span>PORTE</span>
-              <select id="fSize"><option value="">▭ Qualquer porte</option><option value="Pequeno">Pequeno</option><option value="Médio">Médio</option><option value="Grande">Grande</option></select>
-            </label>
-            <label class="field"><span>LOCALIZAÇÃO</span>
-              <select id="fLoc"><option value="">📍 Sapiranga - RS</option><option value="SP">São Paulo - SP</option><option value="RS">Rio Grande do Sul</option><option value="PR">Paraná</option></select>
-            </label>
+          <form class="finder" id="finder">
+            <div class="finder__row">
+              <label class="field"><span>ESPÉCIE</span>
+                <select id="fSpecies">
+                  <option value="">Todos os pets</option>
+                  <option value="cao">Cães</option>
+                  <option value="gato">Gatos</option>
+                </select>
+              </label>
+              <label class="field"><span>PORTE</span>
+                <select id="fSize">
+                  <option value="">Qualquer porte</option>
+                  <option value="Pequeno">Pequeno</option>
+                  <option value="Médio">Médio</option>
+                  <option value="Grande">Grande</option>
+                </select>
+              </label>
+              <label class="field"><span>LOCALIZAÇÃO</span>
+                <select id="fLoc">
+                  <option value="">Sapiranga - RS</option>
+                  <option value="SP">São Paulo - SP</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="PR">Paraná</option>
+                </select>
+              </label>
+            </div>
+            <div class="finder__foot">
+              <small>Filtros avançados: idade, castração, temperamento</small>
+              <button type="submit" class="btn btn--dark">Encontrar Pet</button>
+            </div>
+          </form>
+
+          <ul class="stats">
+            <li><strong data-count="1480" data-suffix="+">1.480+</strong><span>Pets disponíveis</span></li>
+            <li><strong data-count="100" data-suffix="%">100%</strong><span>ONGs verificadas</span></li>
+            <li><strong data-count="320" data-suffix=" ton">320 ton</strong><span>Ração doada</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__media">
+          <div class="badge-float">
+            <span class="badge-float__icon">✓</span>
+            <span><strong>Adoção Responsável</strong><small>Triagem 100% segura</small></span>
           </div>
-          <div class="finder__foot">
-            <small>☰ Filtros avançados: idade, castração, temperamento</small>
-            <button type="submit" class="btn btn--dark">🔍 Encontrar Pet</button>
-          </div>
-        </form>
+          <figure class="hero__photo">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
+              alt="Mulher sorrindo abraçando um cachorro golden retriever" data-fallback="">
+            <figcaption>
+              <span class="chip chip--light">História de Sucesso</span>
+              <q>"O Thor mudou completamente nossa casa. Amor à primeira vista!"</q>
+              <small>Juliana e Thor • Adotado há 3 meses</small>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-        <ul class="stats">
-          <li><strong data-count="1480" data-suffix="+">1.480+</strong><span>Pets disponíveis</span></li>
-          <li><strong data-count="100" data-suffix="%">100%</strong><span>ONGs verificadas</span></li>
-          <li><strong data-count="320" data-suffix=" ton">320 ton</strong><span>Ração doada</span></li>
+    <!-- AÇÕES -->
+    <section class="section actions">
+      <div class="container">
+        <div class="section__head">
+          <div><small class="eyebrow">AÇÕES QUE SALVAM</small>
+            <h2>O que seu coração busca hoje?</h2>
+          </div>
+          <p class="muted">Escolha como deseja se conectar à nossa causa. Cada clique alimenta esperança.</p>
+        </div>
+        <div class="actions__grid">
+          <a href="catalogo.html" class="action"><span class="action__icon"
+              style="background:#b8f0d3;color:#0f5c3f">♥</span>
+            <h3>Quero Adotar</h3>
+            <p>Cães e gatos cheios de carinho à espera</p>
+          </a>
+          <a href="doacao.html" class="action"><span class="action__icon"
+              style="background:#ffd9cf;color:#b8432a">▣</span>
+            <h3>Doar Ração</h3>
+            <p>Campanha Tigela Cheia para abrigos</p>
+          </a>
+          <a href="#ong" class="action"><span class="action__icon" style="background:#cdeedd;color:#1a6b4a">▦</span>
+            <h3>Cadastrar Minha ONG</h3>
+            <p>Painel gratuito de gestão e triagem</p>
+          </a>
+          <a href="#" class="action"><span class="action__icon" style="background:#dbe8e1;color:#3c6a58">⌂</span>
+            <h3>Lar Temporário</h3>
+            <p>Acolhimento solidário até adoção final</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section how">
+      <div class="container">
+        <div class="how__head">
+          <span class="chip chip--mint">Simples, Transparente & Seguro</span>
+          <h2>Como Funciona a Adoção no Helpet</h2>
+          <p>Construímos um fluxo 100% humanizado para garantir a segurança dos animais e a certeza de um lar acolhedor.
+          </p>
+        </div>
+        <div class="how__grid">
+          <article class="step">
+            <div class="step__top"><span class="step__icon">☝</span><b>01</b></div>
+            <h3>Escolha com Carinho</h3>
+            <p>Navegue por perfis detalhados com histórico de saúde completo, carteira de vacinas, fotos reais e
+              temperamento.</p>
+          </article>
+          <article class="step">
+            <div class="step__top"><span class="step__icon" style="background:#d9e8ff;color:#2a5db8"></span><b>02</b>
+            </div>
+            <h3>Formulário & Entrevista</h3>
+            <p>Responda o formulário prévio e tire dúvidas com o protetor da ONG para garantir um match ideal.</p>
+          </article>
+          <article class="step">
+            <div class="step__top"><span class="step__icon" style="background:#ffe0d6;color:#b8432a"></span><b>03</b>
+            </div>
+            <h3>Acolha com Amor</h3>
+            <p>Agende a visita presencial para conhecer seu novo amigo, assine o termo digital e leve uma vida
+              transformada para casa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PETS -->
+    <section class="section pets" id="pets">
+      <div class="container">
+        <div class="section__head section__head--bottom">
+          <div><small class="eyebrow">ADOÇÃO RESPONSÁVEL</small>
+            <h2>Esperando por carinho</h2>
+            <p class="muted">Eles já superaram o abandono e agora só precisam de uma família para amar.</p>
+          </div>
+          <div class="tabs" id="tabs" role="tablist">
+            <button class="tab is-active" data-filter="todos" role="tab">Todos</button>
+            <button class="tab" data-filter="cao" role="tab">Cães</button>
+            <button class="tab" data-filter="gato" role="tab">Gatos</button>
+            <button class="tab" data-filter="filhote" role="tab">Filhotes</button>
+            <button class="tab" data-filter="especial" role="tab">Casos Especiais</button>
+          </div>
+        </div>
+
+        <div class="pets__grid" id="petsGrid">
+          <article class="pet" data-type="cao filhote" data-size="Médio" data-uf="SP">
+            <div class="pet__img"><img
+                src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80"
+                alt="Pipoca" data-fallback="🐶"><button class="fav" aria-label="Favoritar">♡</button></div>
+            <div class="pet__body">
+              <div class="pet__title">
+                <h3>Pipoca</h3><span>1 ano</span>
+              </div>
+              <p class="pet__loc">São Paulo, SP • Porte Médio</p>
+              <p class="pet__desc">Dócil, adora passear no parque e se dá bem com outros cães e gatos.</p>
+              <a href="#" class="btn btn--soft">Quero Conhecer →</a>
+            </div>
+          </article>
+          <article class="pet" data-type="cao" data-size="Médio" data-uf="SP">
+            <div class="pet__img"><img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80"
+                alt="Luna" data-fallback="🐕"><button class="fav" aria-label="Favoritar">♡</button></div>
+            <div class="pet__body">
+              <div class="pet__title">
+                <h3>Luna</h3><span>2 anos</span>
+              </div>
+              <p class="pet__loc">Campinas, SP • Porte Grande</p>
+              <p class="pet__desc">Muito tranquila e amorosa, perfeita para famílias que gostam de companhia...</p>
+              <a href="#" class="btn btn--soft">Quero Conhecer →</a>
+            </div>
+          </article>
+          <article class="pet" data-type="gato filhote" data-size="Pequeno" data-uf="RS">
+            <div class="pet__img"><img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80"
+                alt="Milo" data-fallback="🐱"><button class="fav" aria-label="Favoritar">♡</button></div>
+            <div class="pet__body">
+              <div class="pet__title">
+                <h3>Milo</h3><span>8 meses</span>
+              </div>
+              <p class="pet__loc">Porto Alegre, RS • Porte Peq.</p>
+              <p class="pet__desc">Curioso, castrado, usa caixa de areia perfeitamente e ama um bom carinho no...</p>
+              <a href="#" class="btn btn--soft">Quero Conhecer →</a>
+            </div>
+          </article>
+          <article class="pet" data-type="cao especial" data-size="Médio" data-uf="PR">
+            <div class="pet__img"><img
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80"
+                alt="Thor" data-fallback=""><button class="fav" aria-label="Favoritar">♡</button></div>
+            <div class="pet__body">
+              <div class="pet__title">
+                <h3>Thor</h3><span>3 anos</span>
+              </div>
+              <p class="pet__loc">Curitiba, PR • Porte Médio</p>
+              <p class="pet__desc">Caramelo raiz! Cheio de energia para corridas matinais e muito companheiro de</p>
+              <a href="#" class="btn btn--soft">Quero Conhecer →</a>
+            </div>
+          </article>
+        </div>
+        <p class="empty" id="empty" hidden>Nenhum pet encontrado com esses filtros. Tente outra combinação.</p>
+
+        <div class="center"><a href="catalogo.html" class="btn btn--outline">Buscar mais pets para adoção (1.480
+            disponíveis) →</a></div>
+      </div>
+    </section>
+
+    <!-- CAMPANHA -->
+    <section class="campaign-wrap" id="campanha">
+      <div class="campaign">
+        <div class="campaign__content">
+          <span class="chip chip--alert">✱ CAMPANHA EMERGENCIAL DE NUTRIÇÃO</span>
+          <h2>Campanha Tigela Cheia: Doe Alimento e Cuidados</h2>
+          <p>Mais de 42 abrigos parceiros dependem deste mês para manter potes cheios e animais saudáveis. Sua doação é
+            100% auditada e distribuída por necessidade.</p>
+
+          <div class="progress">
+            <div class="progress__top"><strong>18.500 kg arrecadados</strong><span>74% da meta (25.000 kg)</span></div>
+            <div class="progress__bar">
+              <div class="progress__fill" id="progressFill" data-value="74"></div>
+            </div>
+            <div class="progress__bottom"><small>Início do mês: 0 kg</small><small>Restam apenas 6.500 kg para a meta de
+                segurança</small></div>
+          </div>
+
+          <p class="pack-label">Escolha seu pacote solidário:</p>
+          <div class="packs" id="packs">
+            <button class="pack" data-kg="10" data-price="45"><strong>10 kg</strong><small>R$ 45</small></button>
+            <button class="pack is-active" data-kg="25" data-price="110"><strong>25 kg</strong><small>R$ 110 (Mais
+                doado)</small></button>
+            <button class="pack" data-kg="50" data-price="200"><strong>50 kg</strong><small>R$ 200</small></button>
+            <button class="pack" data-kg="0" data-price="0"><strong>Outro</strong><small>Qualquer valor</small></button>
+          </div>
+          <div class="campaign__cta">
+            <button class="btn btn--rust" id="donateBtn">Alimentar um Abrigo Agora</button>
+            <small>◎ Transparência comprovada com notas e fotos</small>
+          </div>
+        </div>
+
+        <div class="campaign__media">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
+              alt="Cachorro ao lado de uma tigela de ração" data-fallback="">
+            <figcaption>
+              <div><strong>Abrigo Estrela da Manhã</strong><em>Estoque crítico</em></div>
+              <small>140 cães e gatos atendidos esta semana.</small>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section blog">
+      <div class="container">
+        <div class="section__head section__head--bottom">
+          <div><small class="eyebrow">CONTEÚDO & ORIENTAÇÃO</small>
+            <h2>Você Sabia? Dicas de Cuidado & Amor</h2>
+          </div>
+          <a href="#" class="link">Ver todos os artigos do Blog →</a>
+        </div>
+        <div class="blog__grid">
+          <article class="post">
+            <div class="post__img"><img
+                src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=700&q=80"
+                alt="Cachorro dormindo" data-fallback=""><span class="read">4 min de leitura</span></div>
+            <div class="post__body"><small class="cat" style="color:#1a6b4a">ADAPTAÇÃO</small>
+              <h3>Guia de adaptação: primeiros dias do pet adotado em casa</h3>
+              <p>Aprenda a regra dos 3 dias, 3 semanas e 3 meses para transformar a chegada do seu novo pet em um
+                momento...</p>
+              <footer><b>Por Dra. Camila Rocha</b><button class="save" aria-label="Salvar artigo"></button></footer>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="post__img"><img
+                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=80"
+                alt="Veterinária examinando filhote" data-fallback="🩺"><span class="read">3 min de leitura</span></div>
+            <div class="post__body"><small class="cat" style="color:#2a5db8">SAÚDE PREVENTIVA</small>
+              <h3>A importância da vacinação V10 e antirrábica no dia</h3>
+              <p>Proteja seu melhor amigo e toda a vizinhança conhecendo o cronograma essencial de imunização anual e
+                vermifugação...</p>
+              <footer><b>Por Vet Helpet Hub</b><button class="save" aria-label="Salvar artigo">🔖</button></footer>
+            </div>
+          </article>
+          <article class="post">
+            <div class="post__img"><img
+                src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=700&q=80"
+                alt="Gato em arranhador" data-fallback="🐈"><span class="read">5 min de leitura</span></div>
+            <div class="post__body"><small class="cat" style="color:#b8432a">COMPORTAMENTO FELINO</small>
+              <h3>Como preparar o ambiente para receber um gato filhote</h3>
+              <p>Dicas de gatificação, telas de proteção, tipos de areia higiênica e rotinas essenciais para um filhote
+                se sentir em...</p>
+              <footer><b>Por Equipe de Resgate</b><button class="save" aria-label="Salvar artigo">🔖</button></footer>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA ONG -->
+    <section class="cta-wrap" id="ong">
+      <div class="cta">
+        <span class="cta__icon">👥</span>
+        <h2>Você representa uma ONG ou abrigo de animais?</h2>
+        <p>Tenha acesso gratuito ao painel unificado de triagem, campanhas de arrecadação de ração e vitrine nacional de
+          adoção. Juntos salvamos mais vidas.</p>
+        <a href="#" class="btn btn--mint">Cadastrar ONG →</a>
+        <ul>
+          <li>◎ 100% Gratuito para sempre</li>
+          <li>◎ Gestão de fichas e fichas médicas</li>
+          <li>◎ Suporte a campanhas de alimento</li>
         </ul>
       </div>
+    </section>
+  </main>
 
-      <div class="hero__media">
-        <div class="badge-float">
-          <span class="badge-float__icon">✓</span>
-          <span><strong>Adoção Responsável</strong><small>Triagem 100% segura</small></span>
-        </div>
-        <figure class="hero__photo">
-          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80" alt="Mulher sorrindo abraçando um cachorro golden retriever" data-fallback="🐕">
-          <figcaption>
-            <span class="chip chip--light">História de Sucesso</span>
-            <q>"O Thor mudou completamente nossa casa. Amor à primeira vista!"</q>
-            <small>Juliana e Thor • Adotado há 3 meses</small>
-          </figcaption>
-        </figure>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo"><span class="logo__icon">🐾</span><strong style="font-size:18px">Helpet</strong></a>
+        <p>Conectando corações, lares e animais resgatados. Apoio contínuo a ONGs com campanhas de adoção responsável e
+          doação solidária de ração e cuidados veterinários.</p>
+      </div>
+      <div>
+        <h4>Adoção & Causa</h4><a href="#">Quero Adotar um Cão</a><a href="#">Quero Adotar um Gato</a><a href="#">Bancos
+          de Alimentos</a><a href="#">Cadastrar Resgatado</a>
+      </div>
+      <div>
+        <h4>Institucional</h4><a href="#">Sobre o Helpet</a><a href="#">Rede de Abrigos</a><a href="#">Transparência &
+          Metas</a><a href="#">Carreiras & Voluntariado</a>
+      </div>
+      <div>
+        <h4>Ajuda & Suporte</h4><a href="#">Central de Dúvidas</a><a href="#">Diretrizes de Adoção</a><a href="#">Fale
+          Conosco</a><a href="#">Privacidade & Termos</a>
       </div>
     </div>
-  </section>
+    <div class="footer__bottom"><small>© 2026 Helpet Plataforma de Proteção Animal. Todos os direitos
+        reservados.</small><small>Feito com amor e patinhas acolhidas 🐾</small></div>
+  </footer>
 
-  <!-- AÇÕES -->
-  <section class="section actions">
-    <div class="container">
-      <div class="section__head">
-        <div><small class="eyebrow">AÇÕES QUE SALVAM</small><h2>O que seu coração busca hoje?</h2></div>
-        <p class="muted">Escolha como deseja se conectar à nossa causa. Cada clique alimenta esperança.</p>
-      </div>
-      <div class="actions__grid">
-        <a href="catalogo.html" class="action"><span class="action__icon" style="background:#b8f0d3;color:#0f5c3f">♥</span><h3>Quero Adotar</h3><p>Cães e gatos cheios de carinho à espera</p></a>
-        <a href="doacao.html" class="action"><span class="action__icon" style="background:#ffd9cf;color:#b8432a">▣</span><h3>Doar Ração</h3><p>Campanha Tigela Cheia para abrigos</p></a>
-        <a href="#ong" class="action"><span class="action__icon" style="background:#cdeedd;color:#1a6b4a">▦</span><h3>Cadastrar Minha ONG</h3><p>Painel gratuito de gestão e triagem</p></a>
-        <a href="#" class="action"><span class="action__icon" style="background:#dbe8e1;color:#3c6a58">⌂</span><h3>Lar Temporário</h3><p>Acolhimento solidário até adoção final</p></a>
-      </div>
-    </div>
-  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- COMO FUNCIONA -->
-  <section class="section how">
-    <div class="container">
-      <div class="how__head">
-        <span class="chip chip--mint">Simples, Transparente & Seguro</span>
-        <h2>Como Funciona a Adoção no Helpet</h2>
-        <p>Construímos um fluxo 100% humanizado para garantir a segurança dos animais e a certeza de um lar acolhedor.</p>
-      </div>
-      <div class="how__grid">
-        <article class="step"><div class="step__top"><span class="step__icon">☝</span><b>01</b></div><h3>Escolha com Carinho</h3><p>Navegue por perfis detalhados com histórico de saúde completo, carteira de vacinas, fotos reais e temperamento.</p></article>
-        <article class="step"><div class="step__top"><span class="step__icon" style="background:#d9e8ff;color:#2a5db8">▤</span><b>02</b></div><h3>Formulário & Entrevista</h3><p>Responda o formulário prévio e tire dúvidas com o protetor da ONG para garantir um match ideal.</p></article>
-        <article class="step"><div class="step__top"><span class="step__icon" style="background:#ffe0d6;color:#b8432a">⌂</span><b>03</b></div><h3>Acolha com Amor</h3><p>Agende a visita presencial para conhecer seu novo amigo, assine o termo digital e leve uma vida transformada para casa.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PETS -->
-  <section class="section pets" id="pets">
-    <div class="container">
-      <div class="section__head section__head--bottom">
-        <div><small class="eyebrow">ADOÇÃO RESPONSÁVEL</small><h2>Esperando por carinho</h2><p class="muted">Eles já superaram o abandono e agora só precisam de uma família para amar.</p></div>
-        <div class="tabs" id="tabs" role="tablist">
-          <button class="tab is-active" data-filter="todos" role="tab">Todos</button>
-          <button class="tab" data-filter="cao" role="tab">Cães</button>
-          <button class="tab" data-filter="gato" role="tab">Gatos</button>
-          <button class="tab" data-filter="filhote" role="tab">Filhotes</button>
-          <button class="tab" data-filter="especial" role="tab">Casos Especiais</button>
-        </div>
-      </div>
-
-      <div class="pets__grid" id="petsGrid">
-        <article class="pet" data-type="cao filhote" data-size="Médio" data-uf="SP">
-          <div class="pet__img"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Pipoca" data-fallback="🐶"><button class="fav" aria-label="Favoritar">♡</button></div>
-          <div class="pet__body">
-            <div class="pet__title"><h3>Pipoca</h3><span>1 ano</span></div>
-            <p class="pet__loc">📍 São Paulo, SP • Porte Médio</p>
-            <p class="pet__desc">Dócil, adora passear no parque e se dá bem com outros cães e gatos.</p>
-            <a href="#" class="btn btn--soft">Quero Conhecer →</a>
-          </div>
-        </article>
-        <article class="pet" data-type="cao" data-size="Médio" data-uf="SP">
-          <div class="pet__img"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" alt="Luna" data-fallback="🐕"><button class="fav" aria-label="Favoritar">♡</button></div>
-          <div class="pet__body">
-            <div class="pet__title"><h3>Luna</h3><span>2 anos</span></div>
-            <p class="pet__loc">📍 Campinas, SP • Porte Grande</p>
-            <p class="pet__desc">Muito tranquila e amorosa, perfeita para famílias que gostam de companhia...</p>
-            <a href="#" class="btn btn--soft">Quero Conhecer →</a>
-          </div>
-        </article>
-        <article class="pet" data-type="gato filhote" data-size="Pequeno" data-uf="RS">
-          <div class="pet__img"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Milo" data-fallback="🐱"><button class="fav" aria-label="Favoritar">♡</button></div>
-          <div class="pet__body">
-            <div class="pet__title"><h3>Milo</h3><span>8 meses</span></div>
-            <p class="pet__loc">📍 Porto Alegre, RS • Porte Peq.</p>
-            <p class="pet__desc">Curioso, castrado, usa caixa de areia perfeitamente e ama um bom carinho no...</p>
-            <a href="#" class="btn btn--soft">Quero Conhecer →</a>
-          </div>
-        </article>
-        <article class="pet" data-type="cao especial" data-size="Médio" data-uf="PR">
-          <div class="pet__img"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80" alt="Thor" data-fallback="🐕‍🦺"><button class="fav" aria-label="Favoritar">♡</button></div>
-          <div class="pet__body">
-            <div class="pet__title"><h3>Thor</h3><span>3 anos</span></div>
-            <p class="pet__loc">📍 Curitiba, PR • Porte Médio</p>
-            <p class="pet__desc">Caramelo raiz! Cheio de energia para corridas matinais e muito companheiro de</p>
-            <a href="#" class="btn btn--soft">Quero Conhecer →</a>
-          </div>
-        </article>
-      </div>
-      <p class="empty" id="empty" hidden>Nenhum pet encontrado com esses filtros. Tente outra combinação.</p>
-
-      <div class="center"><a href="catalogo.html" class="btn btn--outline">Buscar mais pets para adoção (1.480 disponíveis) →</a></div>
-    </div>
-  </section>
-
-  <!-- CAMPANHA -->
-  <section class="campaign-wrap" id="campanha">
-    <div class="campaign">
-      <div class="campaign__content">
-        <span class="chip chip--alert">✱ CAMPANHA EMERGENCIAL DE NUTRIÇÃO</span>
-        <h2>Campanha Tigela Cheia: Doe Alimento e Cuidados</h2>
-        <p>Mais de 42 abrigos parceiros dependem deste mês para manter potes cheios e animais saudáveis. Sua doação é 100% auditada e distribuída por necessidade.</p>
-
-        <div class="progress">
-          <div class="progress__top"><strong>18.500 kg arrecadados</strong><span>74% da meta (25.000 kg)</span></div>
-          <div class="progress__bar"><div class="progress__fill" id="progressFill" data-value="74"></div></div>
-          <div class="progress__bottom"><small>Início do mês: 0 kg</small><small>Restam apenas 6.500 kg para a meta de segurança</small></div>
-        </div>
-
-        <p class="pack-label">Escolha seu pacote solidário:</p>
-        <div class="packs" id="packs">
-          <button class="pack" data-kg="10" data-price="45"><strong>10 kg</strong><small>R$ 45</small></button>
-          <button class="pack is-active" data-kg="25" data-price="110"><strong>25 kg</strong><small>R$ 110 (Mais doado)</small></button>
-          <button class="pack" data-kg="50" data-price="200"><strong>50 kg</strong><small>R$ 200</small></button>
-          <button class="pack" data-kg="0" data-price="0"><strong>Outro</strong><small>Qualquer valor</small></button>
-        </div>
-        <div class="campaign__cta">
-          <button class="btn btn--rust" id="donateBtn">🍴 Alimentar um Abrigo Agora</button>
-          <small>◎ Transparência comprovada com notas e fotos</small>
-        </div>
-      </div>
-
-      <div class="campaign__media">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80" alt="Cachorro ao lado de uma tigela de ração" data-fallback="🥣">
-          <figcaption>
-            <div><strong>Abrigo Estrela da Manhã</strong><em>Estoque crítico</em></div>
-            <small>140 cães e gatos atendidos esta semana.</small>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section class="section blog">
-    <div class="container">
-      <div class="section__head section__head--bottom">
-        <div><small class="eyebrow">CONTEÚDO & ORIENTAÇÃO</small><h2>Você Sabia? Dicas de Cuidado & Amor</h2></div>
-        <a href="#" class="link">Ver todos os artigos do Blog →</a>
-      </div>
-      <div class="blog__grid">
-        <article class="post">
-          <div class="post__img"><img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=700&q=80" alt="Cachorro dormindo" data-fallback="😴"><span class="read">4 min de leitura</span></div>
-          <div class="post__body"><small class="cat" style="color:#1a6b4a">ADAPTAÇÃO</small><h3>Guia de adaptação: primeiros dias do pet adotado em casa</h3><p>Aprenda a regra dos 3 dias, 3 semanas e 3 meses para transformar a chegada do seu novo pet em um momento...</p><footer><b>Por Dra. Camila Rocha</b><button class="save" aria-label="Salvar artigo">🔖</button></footer></div>
-        </article>
-        <article class="post">
-          <div class="post__img"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=80" alt="Veterinária examinando filhote" data-fallback="🩺"><span class="read">3 min de leitura</span></div>
-          <div class="post__body"><small class="cat" style="color:#2a5db8">SAÚDE PREVENTIVA</small><h3>A importância da vacinação V10 e antirrábica no dia</h3><p>Proteja seu melhor amigo e toda a vizinhança conhecendo o cronograma essencial de imunização anual e vermifugação...</p><footer><b>Por Vet Helpet Hub</b><button class="save" aria-label="Salvar artigo">🔖</button></footer></div>
-        </article>
-        <article class="post">
-          <div class="post__img"><img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=700&q=80" alt="Gato em arranhador" data-fallback="🐈"><span class="read">5 min de leitura</span></div>
-          <div class="post__body"><small class="cat" style="color:#b8432a">COMPORTAMENTO FELINO</small><h3>Como preparar o ambiente para receber um gato filhote</h3><p>Dicas de gatificação, telas de proteção, tipos de areia higiênica e rotinas essenciais para um filhote se sentir em...</p><footer><b>Por Equipe de Resgate</b><button class="save" aria-label="Salvar artigo">🔖</button></footer></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA ONG -->
-  <section class="cta-wrap" id="ong">
-    <div class="cta">
-      <span class="cta__icon">👥</span>
-      <h2>Você representa uma ONG ou abrigo de animais?</h2>
-      <p>Tenha acesso gratuito ao painel unificado de triagem, campanhas de arrecadação de ração e vitrine nacional de adoção. Juntos salvamos mais vidas.</p>
-      <a href="#" class="btn btn--mint">Cadastrar ONG →</a>
-      <ul><li>◎ 100% Gratuito para sempre</li><li>◎ Gestão de fichas e fichas médicas</li><li>◎ Suporte a campanhas de alimento</li></ul>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a href="#" class="logo"><span class="logo__icon">🐾</span><strong style="font-size:18px">Helpet</strong></a>
-      <p>Conectando corações, lares e animais resgatados. Apoio contínuo a ONGs com campanhas de adoção responsável e doação solidária de ração e cuidados veterinários.</p>
-    </div>
-    <div><h4>Adoção & Causa</h4><a href="#">Quero Adotar um Cão</a><a href="#">Quero Adotar um Gato</a><a href="#">Bancos de Alimentos</a><a href="#">Cadastrar Resgatado</a></div>
-    <div><h4>Institucional</h4><a href="#">Sobre o Helpet</a><a href="#">Rede de Abrigos</a><a href="#">Transparência & Metas</a><a href="#">Carreiras & Voluntariado</a></div>
-    <div><h4>Ajuda & Suporte</h4><a href="#">Central de Dúvidas</a><a href="#">Diretrizes de Adoção</a><a href="#">Fale Conosco</a><a href="#">Privacidade & Termos</a></div>
-  </div>
-  <div class="footer__bottom"><small>© 2026 Helpet Plataforma de Proteção Animal. Todos os direitos reservados.</small><small>Feito com amor e patinhas acolhidas 🐾</small></div>
-</footer>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script src="script/script.js"></script>
+  <script src="script/script.js"></script>
 </body>
+
 </html>
